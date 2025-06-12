@@ -39,3 +39,32 @@ int main() {
             tabuleiro[linhaV + i][colunaV] = 3;
         }
     }
+    //Diagonal
+    int linhaD1 = 0;
+    int colunaD1 = 0;
+    sobreposicao = 0;
+    for (int i = 0; i < NAVIO; i++) {
+        if (tabuleiro[linhaD1 + i][colunaD1 + i] != 0) {
+            sobreposicao = 1;
+        }
+    }
+    if (!sobreposicao && linhaD1 + NAVIO <= TAM && colunaD1 + NAVIO <= TAM) {
+        for (int i = 0; i < NAVIO; i++) {
+            tabuleiro[linhaD1 + i][colunaD1 + i] = 3;
+        }
+    }
+    //Diagonal secundária
+    int linhaD2 = 2;
+    int colunaD2 = 8;
+    sobreposicao = 0;
+    for (int i = 0; i < NAVIO; i++) {
+        if (tabuleiro[linhaD2 + i][colunaD2 - i] != 0) {
+            sobreposicao = 1;
+        }
+    }
+    if (!sobreposicao && linhaD2 + NAVIO <= TAM && colunaD2 - (NAVIO - 1) >= 0) {
+        for (int i = 0; i < NAVIO; i++) {
+            tabuleiro[linhaD2 + i][colunaD2 - i] = 3;
+        }
+    }
+
