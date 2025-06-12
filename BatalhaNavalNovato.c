@@ -23,3 +23,20 @@ int main() {
     for (int i = 0; i < NAVIO; i++) {
         tabuleiro[linhaV + i][colunaV] = 3;
     }
+    
+    printf("   ");
+    for (int j = 0; j < TAM; j++) {
+        printf("%2d ", j + 1);
+    }
+    printf("\n");
+
+    for (int i = 0; i < TAM; i++) {
+        printf(" %c ", 'A' + i);
+        for (int j = 0; j < TAM; j++) {
+            printf("%2d ", tabuleiro[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
